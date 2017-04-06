@@ -1,13 +1,16 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
+var {Provider} = require('react-redux');
 var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 
 var TodoApp = require('TodoApp')
 
 var actions = require('actions');
-var store = require('configureStore').configure(); //calling configureStore and then grabbing the configure function from it
+//calling configureStore and then grabbing the configure function from it
+var store = require('configureStore').configure(); 
 
-store.subscribe(() => { //used for listening to changes on the store
+//used for listening to changes on the store
+store.subscribe(() => { 
     console.log('New state', store.getState());
 });
 
@@ -22,6 +25,9 @@ require('style!css!sass!applicationStyles')
 
 
 ReactDOM.render(
-	<TodoApp/>,
+    //add tag so that the todoApp and all of it's children can access the store, as well as disatch actions
+	<Provider store={store}> 
+        <TodoApp/>
+    </Provider>,
     document.getElementById('app')
 );
