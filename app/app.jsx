@@ -9,7 +9,6 @@ var actions = require('actions');
 var store = require('configureStore').configure(); 
 var TodoAPI = require('TodoAPI');
 
-
 //used for listening to changes on the store
 store.subscribe(() => { 
     var state = store.getState();    
