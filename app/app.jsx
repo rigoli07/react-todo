@@ -10,14 +10,17 @@ var store = require('configureStore').configure();
 var TodoAPI = require('TodoAPI');
 
 //used for listening to changes on the store
-store.subscribe(() => { 
-    var state = store.getState();    
-    console.log('New state', state);    
-    TodoAPI.setTodos(state.todos);
-});
+//store.subscribe(() => { 
+//    var state = store.getState();    
+//    console.log('New state', state);    
+//    TodoAPI.setTodos(state.todos);
+//});
 
-var initialTodos = TodoAPI.getTodos();
-store.dispatch(actions.addTodos(initialTodos));
+//var initialTodos = TodoAPI.getTodos();
+//store.dispatch(actions.addTodos(initialTodos));
+
+//async request which fetches the records from the database
+store.dispatch(actions.startAddTodos());
 
 //load foundation
 $(document).foundation();

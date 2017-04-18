@@ -2,30 +2,30 @@ var $ = require('jQuery');
 var TodoSearch = require('TodoSearch');
 
 module.exports = {
-	setTodos: function(todos) {
-		if ($.isArray(todos)) { //takes a varible and returns true or false, depending if it's an array
-			localStorage.setItem('todos', JSON.stringify(todos)); //JSON.stringify, takes array and converts into a string so it can be processed through local storage
-			return todos;
-		}
-	},
-	getTodos: function () {
-		var stringTodos = localStorage.getItem('todos'); //set stringTodos equal to todos value from local storage
-		var todos = [];
+	//setTodos: function(todos) {
+	//	if ($.isArray(todos)) { //takes a varible and returns true or false, depending if it's an array
+	//		localStorage.setItem('todos', JSON.stringify(todos)); //JSON.stringify, takes array and converts into a string so it can be processed through local storage
+	//		return todos;
+	//	}
+	//},
+	//getTodos: function () {
+	//	var stringTodos = localStorage.getItem('todos'); //set stringTodos equal to todos value from local storage
+	//	var todos = [];
+//
+	//	try { //checks to see if what is stored in stringTodos, is a valid obkect or array
+	//		todos = JSON.parse(stringTodos); //converts strings into an array 
+	//	} catch (e) { //if it's not valid, we do nothing
+//
+	//	}
 
-		try { //checks to see if what is stored in stringTodos, is a valid obkect or array
-			todos = JSON.parse(stringTodos); //converts strings into an array 
-		} catch (e) { //if it's not valid, we do nothing
-
-		}
-
-		return $.isArray(todos) ? todos : []; //if todos is an array, it excutes the code after the '?', if it's not an array, it excutes the code after the :, the if statement below does the exactly same thing.
+	//	return $.isArray(todos) ? todos : []; //if todos is an array, it excutes the code after the '?', if it's not an array, it excutes the code after the :, the if statement below does the exactly same thing.
 
 		//if ($.isArray(todos)) {
 		//	return todos;
 		//} else {
 		//	return [];
 		//}
-	},
+	//},
 	filterTodos: function (todos, showCompleted, searchText) {
 		var filteredTodos = todos;
 
