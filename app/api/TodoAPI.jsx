@@ -1,4 +1,4 @@
-var $ = require('jQuery');
+var $ = require('jquery');
 var TodoSearch = require('TodoSearch');
 
 module.exports = {

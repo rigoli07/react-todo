@@ -1,4 +1,4 @@
-var $ = require('jQuery');
+var $ = require('jquery');
 //function add (a, b) {
 //	return a + b;
 //}
